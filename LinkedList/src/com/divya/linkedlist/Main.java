@@ -6,11 +6,16 @@ public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.addLast(10);
-        list.addLast(20);
-        list.addLast(30);
-        list.addLast(40);
+//        list.addLast(20);
+//        list.addLast(30);
 
-        System.out.println(list.kthNodeFromEnd(-1));
+        list.printMiddle();
+
+//        System.out.println(list.kthNodeFromEnd(2));
+
+//        int value = list.removeKthNodeFromEnd(2);
+//        int[] array = list.toArray();
+//        System.out.println(Arrays.toString(array));
 
 //        list.addFirst(10);
 //        list.addFirst(20);
@@ -28,8 +33,6 @@ public class Main {
 
 //        System.out.println(list.size());
 
-//        int[] array = list.toArray();
-//        System.out.println(Arrays.toString(array));
 
 //        list.reverse();
 //

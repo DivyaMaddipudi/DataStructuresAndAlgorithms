@@ -169,10 +169,52 @@ public class LinkedList {
             steps++;
         }
 //        System.out.println(steps + "" + fast.value);
-        while(fast.next != null) {
+        while(fast != last) {
             fast = fast.next;
             slow = slow.next;
         }
         return slow.value;
     }
+
+    public int removeKthNodeFromEnd(int k) {
+        Node fast = first;
+        Node slow = first;
+
+        for(int i=0;i<k;i++) {
+            if(slow.next == null) {
+                if(i==k-1) first = first.next;
+                return first.value;
+            }
+            if(fast.next == null) {
+                first = first.next;
+                return first.value;
+            }
+            fast = fast.next;
+            System.out.println("hello in for");
+        }
+
+
+        while (fast.next != null) {
+            System.out.println("hello in while");
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        slow.next = slow.next.next;
+        return first.value;
+    }
+
+    public void printMiddle() {
+        Node fast = first;
+        Node slow = first;
+        while((fast != last) && (fast.next != last) ) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        if(fast == last) {
+            System.out.println(slow.value);
+        } else
+            System.out.println(slow.value + " " + slow.next.value);
+    }
+
 }
