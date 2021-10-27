@@ -6,10 +6,20 @@ public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.addLast(10);
-//        list.addLast(20);
-//        list.addLast(30);
+        list.addLast(20);
+        list.addLast(30);
+        list.addLast(40);
+        list.addLast(50);
 
-        list.printMiddle();
+        if(list.detectLoop()) {
+            System.out.println("Loop detected");
+        } else {
+            System.out.println("Loop not detected");
+        }
+
+//        list.printMiddle();
+
+
 
 //        System.out.println(list.kthNodeFromEnd(2));
 

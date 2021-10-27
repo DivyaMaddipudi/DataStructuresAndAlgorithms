@@ -217,4 +217,17 @@ public class LinkedList {
             System.out.println(slow.value + " " + slow.next.value);
     }
 
+    public boolean detectLoop() {
+//        first.next.next.next.next.next = first.next.next;
+        Node fast = first;
+        Node slow = first;
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow)
+                return true;
+        }
+        return false;
+    }
+
 }
