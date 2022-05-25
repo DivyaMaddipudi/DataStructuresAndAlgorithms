@@ -6,8 +6,7 @@ class Solution {
         while(n >= 0 ){
             n = n - row;
             int diff = initial - n;
-            initial = n;
-                
+            initial = n;  
             if(diff == row && initial >= 0) {
                 count ++;
             } else {
