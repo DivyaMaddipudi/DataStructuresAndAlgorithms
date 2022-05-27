@@ -3,7 +3,6 @@ class Solution {
         int[] copy = new int[nums.length];
         for(int i=0;i<nums.length;i++) {
             copy[(i+k)%nums.length] = nums[i];
-            // System.out.println(copy[i] + " i "+ (i+k)%nums.length + " o i " + i);   
         }
       
         for(int i=0;i<copy.length;i++) {
