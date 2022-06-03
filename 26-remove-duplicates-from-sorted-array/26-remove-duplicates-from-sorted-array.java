@@ -7,8 +7,6 @@ class Solution {
             if(nums[slow] != nums[fast]) {
                 slow++;
                 nums[slow] = nums[fast];
-                System.out.println(slow+" if");
-
             } 
         }
         return slow+1;
