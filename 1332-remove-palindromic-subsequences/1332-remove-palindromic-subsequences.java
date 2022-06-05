@@ -2,7 +2,6 @@ class Solution {
     public int removePalindromeSub(String s) {
         if(s=="") return 0;
         if(s.equals(reverse(s))) return 1;
-        
         return 2;
     }
     
