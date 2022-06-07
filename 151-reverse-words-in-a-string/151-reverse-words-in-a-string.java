@@ -37,7 +37,7 @@ class Solution {
            
         }
          for(int i=0;i<arr.length;i++) {
-            System.out.println(arr[i] + i);
+            // System.out.println(arr[i] + i);
              if(arr[i] != "") {
                  new_str += arr[i] + " ";
              } 
