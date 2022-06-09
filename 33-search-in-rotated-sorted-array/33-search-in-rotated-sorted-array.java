@@ -16,22 +16,15 @@ class Solution {
         
         
        if(min_index != 0) {
-            System.out.println("in if" + min_index);
-        
             min_index = nums.length - min_index;
-
             for(int i=0;i<nums.length;i++) {
             copy[(i+min_index)%nums.length] = nums[i];
-            System.out.println(initial + " in odd ekse " + min_index);
-                
-            // System.out.println(copy[i] +" " + i);
             }
        } else {
             System.out.println("in else");
            
             for(int i=0;i<nums.length;i++) {
             copy[i] = nums[i];
-            // System.out.println(copy[i] +" " + i);
             }
        }
         
@@ -52,19 +45,14 @@ class Solution {
         
         if(low <= high) {
         if(num[mid] == target) {
-            System.out.println( minI + " " + mid + " mid and minI" + minI);
            if(minI+mid >= num.length) {
                return (minI+mid)%num.length;
            } else {
                return minI+mid;
            }
         } else if(num[mid] > target) {
-            System.out.println("checking first half");
-            
             return searchMid(num, low, mid-1, target, minI);
         } else if(num[mid] < target){
-            System.out.println("checking second half");
-            
             return searchMid(num, mid+1, high, target, minI);
         }
            
