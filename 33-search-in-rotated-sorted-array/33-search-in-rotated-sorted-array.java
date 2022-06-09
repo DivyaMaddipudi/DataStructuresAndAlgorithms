@@ -17,7 +17,7 @@ class Solution {
         
        if(min_index != 0) {
             System.out.println("in if" + min_index);
-        if(nums.length%2 != 0 ) {
+        
             min_index = nums.length - min_index;
 
             for(int i=0;i<nums.length;i++) {
@@ -26,15 +26,6 @@ class Solution {
                 
             // System.out.println(copy[i] +" " + i);
             }
-        } else {
-            min_index = nums.length - min_index;
-            
-            for(int i=0;i<nums.length;i++) {
-            copy[(i+min_index)%nums.length] = nums[i];
-            System.out.println(initial + " in even ekse " + min_index);
-            }
-        }
-       
        } else {
             System.out.println("in else");
            
