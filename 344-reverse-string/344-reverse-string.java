@@ -35,8 +35,8 @@ class Solution {
         
         //RECURSION
         char temp = s[s.length - 1];
-         char first = s[s.length-1];
-         char last = s[0];
+        char first = s[s.length-1];
+        char last = s[0];
         System.out.println(s.length);
         char[] arr2 = Arrays.copyOfRange(s,1,s.length-1);
        
