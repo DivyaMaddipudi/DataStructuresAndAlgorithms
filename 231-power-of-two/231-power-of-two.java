@@ -10,9 +10,6 @@ class Solution {
         if(n%2 != 0 ) {
             return false;
         }
-        // System.out.println(n%2 == 0);
-        
-       
      return isPowerOfTwo(n/2);
     }
 }
