@@ -11,10 +11,7 @@ class Solution {
     }
     
     public void subSets(int index, ArrayList<Integer> arr, int size, int[] nums,  ArrayList<List<Integer>> al1) {
-        // ArrayList<List<Integer>> al1= new ArrayList<List<Integer>>();
-        
         if(index > size) {
-            // System.out.println(arr);
             al1.add(new ArrayList<Integer>(arr));
             System.out.println(al1);
             return;
@@ -23,6 +20,5 @@ class Solution {
         subSets(index+1, arr, size, nums, al1);
         arr.remove(Integer.valueOf(nums[index]));
         subSets(index+1, arr, size, nums, al1);
-        // return al1;
     }
 }
