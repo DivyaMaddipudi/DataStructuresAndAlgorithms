@@ -13,11 +13,7 @@ class Solution {
         map[7] = "pqrs";
         map[8] = "tuv";
         map[9] = "wxyz";
-        
-        
-        
         backtrack(ans, digits, "", 0, map);
-        
         return ans;
     }
     
@@ -26,9 +22,7 @@ class Solution {
             ans.add(currStr);
             return;
         }
-        
         String letters = map[digits.charAt(index)-'0'];
-        
         for(int i=0;i<letters.length();i++) {
             backtrack(ans, digits, currStr+letters.charAt(i), index+1, map);
         }
