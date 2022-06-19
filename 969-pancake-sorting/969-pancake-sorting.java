@@ -11,33 +11,18 @@ class Solution {
                 if(arr[j] > max) {
                     max = arr[j];
                     index = j;
-                    // System.out.println(max);
                 }
             }
-            
             flip(arr, index);
             ans.add(index+1);
-            
             flip(arr, arr.length-i-1);
             ans.add(arr.length-i);
-            
-            System.out.println(max + " " + index);
-            
         }
-        
-        for(int j=0;j<arr.length;j++) {
-            System.out.print(arr[j] + " ");
-        }
-        System.out.println();
         return ans;
     }
     
     public void flip(int[] arr, int k) {
         int[] copy = new int[k+1];
-          
-        // for(int j=0;j<arr.length;j++) {
-        //     System.out.print(arr[j] + " ");
-        // }
         
         System.out.println(k + " k value " + copy.length);
         for(int i=k;i>=0;i--) {
@@ -46,7 +31,6 @@ class Solution {
         
         for(int j=0;j<copy.length;j++) {
             arr[j] = copy[j];
-            // System.out.print(arr[j] + " --- ");
         }
     }
 }
