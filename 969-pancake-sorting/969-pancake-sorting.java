@@ -23,12 +23,9 @@ class Solution {
     
     public void flip(int[] arr, int k) {
         int[] copy = new int[k+1];
-        
-        System.out.println(k + " k value " + copy.length);
         for(int i=k;i>=0;i--) {
             copy[k-i] = arr[i];
         }
-        
         for(int j=0;j<copy.length;j++) {
             arr[j] = copy[j];
         }
