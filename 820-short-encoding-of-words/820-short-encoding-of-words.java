@@ -13,33 +13,34 @@ class Solution {
                 }
             }
         }
+        
+        
         for(int i=0;i<words.length;i++) {
                 System.out.println(words[i]);
             
-            if(words[i].length() == 1) {
-                int index = ans.lastIndexOf(words[i]);
-                int length = index + words[i].length();
-                System.out.println(index + " -------- " + length);
-                if(ans == "") {
-                    ans += words[i] + "#";
-                } else if(ans.charAt(length) != '#') {
-                    ans += words[i]+"#";
-                }
-            } else {
+            // if(words[i].length() == 1) {
+            //     int index = ans.lastIndexOf(words[i]);
+            //     int length = index + words[i].length();
+            //     System.out.println(index + " -------- " + length);
+            //     if(ans == "") {
+            //         ans += words[i] + "#";
+            //     } else if(ans.charAt(length) != '#') {
+            //         ans += words[i]+"#";
+            //     }
+            // } else {
             
-            if(ans.contains(words[i])) {
-                int index = ans.indexOf(words[i]);
-                int length = index + words[i].length();
-                System.out.println(index + " -------- " + length);
-                if(ans.charAt(length) != '#') {
-                    ans += words[i]+"#";
-                }
-                
-            } else {
+            if(!ans.contains(words[i]+"#")) {
+                // int index = ans.indexOf(words[i]);
+                // int length = index + words[i].length();
+                // System.out.println(index + " -------- " + length);
+                // if(ans.charAt(length) != '#') {
+                //     ans += words[i]+"#";
+                // }
                  ans += words[i]+"#";
+                
+            } 
             }
-            }
-        }
+        // }
         System.out.println(ans);
         return ans.length();
     }
