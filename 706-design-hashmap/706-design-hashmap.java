@@ -16,7 +16,7 @@ class MyHashMap {
     int bucket;
     
     public MyHashMap() {
-        bucket = 10000;
+        bucket = 1000;
         nodes = new Node[bucket];
     }
     
