@@ -1,20 +1,48 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0) return true;
         
-        int i = 0; 
-        int j = matrix[0].length-1;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int low = 0;
+        int high = m*n-1;
         
-        while(i<matrix.length && j>=0) {
-            System.out.println(matrix[i][j] + " --- " + i + " " + j);
-            if(matrix[i][j] == target) {
+        while(low <= high) {
+            int mid = low + (high - low)/2; //To avoid Integer overflow
+            int row = mid/n;
+            int col = mid%n;
+            if(matrix[row][col] == target) {
                 return true;
-            } else if(matrix[i][j] < target) {
-                i++;
-            } else if(matrix[i][j] > target) {
-                j--;
+            } else if(target < matrix[row][col]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
         return false;
+
+        
+        
+        
+        
+        // O(Max(m, n))
+        
+//         int i = 0; 
+//         int j = matrix[0].length-1;
+        
+//         while(i<matrix.length && j>=0) {
+//             System.out.println(matrix[i][j] + " --- " + i + " " + j);
+//             if(matrix[i][j] == target) {
+//                 return true;
+//             } else if(matrix[i][j] < target) {
+//                 i++;
+//             } else if(matrix[i][j] > target) {
+//                 j--;
+//             }
+//         }
+//         return false;
+        
+        
         
 //         int j = 0;
 //         int newRow = 0;
