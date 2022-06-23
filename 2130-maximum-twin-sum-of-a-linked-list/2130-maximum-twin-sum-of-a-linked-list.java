@@ -15,10 +15,9 @@ class Solution {
         
         int len = 0;
         while(temp!=null) {
-            temp = temp.next;
-            len++;
+            temp = temp.next.next;
+            len = len + 2;
         }
-        System.out.println(len);
         
         int size = 0;
         temp = head;
@@ -31,11 +30,9 @@ class Solution {
             } else {
                 hm.put(len-1-size, temp.val);
             }
-            System.out.println(temp.val + " val ");
             temp = temp.next;
             size++;
         }
-        System.out.println(hm);
         int max = Integer.MIN_VALUE;
         for(Integer value: hm.values()) {
             if(value > max) {
