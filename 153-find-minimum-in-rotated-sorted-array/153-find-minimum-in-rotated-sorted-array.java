@@ -9,7 +9,6 @@ class Solution {
         min = nums[mid];
         while(l<h) {
             int minVal = Math.min(nums[l], nums[h]);
-            System.out.println(minVal);
             min = Math.min(min, minVal);  
             l++;
             h--;
