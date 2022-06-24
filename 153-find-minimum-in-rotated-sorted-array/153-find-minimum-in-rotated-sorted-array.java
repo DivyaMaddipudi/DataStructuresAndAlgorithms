@@ -4,14 +4,30 @@ class Solution {
         
         int l = 0;
         int h = nums.length - 1;
-        int min = nums[0];
-        int mid = l + (h-l)/2;
-        min = nums[mid];
-        while(l<h) {
-            int minVal = Math.min(nums[l], nums[h]);
-            min = Math.min(min, minVal);  
-            l++;
-            h--;
+        int min = Integer.MAX_VALUE;
+        while(l<=h) {
+            int mid = l + (h-l)/2;
+            min = Math.min(min, nums[mid]);
+            if(nums[l] <= nums[mid] && nums[l] <= nums[h]) {
+                //min is in first array
+                 if(min <= nums[l]) {
+                    l = mid + 1;
+                     
+                } else {
+                    h = mid - 1;
+                     
+                }
+            } else {
+                //min is in second array
+                if(min <= nums[h]) {
+                    h = mid - 1;
+                    
+                } else {
+                    l = mid + 1;
+                    
+                }
+                
+            }
         }
      return min;   
     }
