@@ -11,7 +11,7 @@ class Solution {
                 return mid;
             }
             
-            if(arr[mid] <= arr[mid + 1]) {
+            if((mid == 0 || arr[mid-1] <= arr[mid]) && (mid == arr.length - 1 || arr[mid] < arr[mid+1]) ) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
