@@ -5,10 +5,10 @@ class Solution {
         
         while(low <= high) {
             int mid = low + (high - low)/2;
-            if(target >= letters[mid]) {
-                low = mid + 1;
+            if(target < letters[mid]) {
+                high = mid - 1; 
             } else {
-                high = mid - 1;
+                low = mid + 1;
             }
         }
         
