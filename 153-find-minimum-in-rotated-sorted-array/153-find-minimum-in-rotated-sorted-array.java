@@ -1,6 +1,6 @@
 class Solution {
     public int findMin(int[] nums) {
-        if(nums.length == 0) return -1;
+        if(nums.length ==  1) return nums[0];
         
         int l = 0;
         int h = nums.length - 1;
@@ -12,10 +12,8 @@ class Solution {
                 //min is in first array
                  if(min <= nums[l]) {
                     l = mid + 1;
-                     
                 } else {
                     h = mid - 1;
-                     
                 }
             } else {
                 //min is in second array
@@ -24,9 +22,7 @@ class Solution {
                     
                 } else {
                     l = mid + 1;
-                    
                 }
-                
             }
         }
      return min;   
