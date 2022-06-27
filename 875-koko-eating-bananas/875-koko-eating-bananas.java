@@ -1,14 +1,9 @@
 class Solution {
-    public int minEatingSpeed(int[] piles, int h) {
-        
-        
+    public int minEatingSpeed(int[] piles, int h) { 
         int low = 1;
         int high = Integer.MIN_VALUE;
         
         for(int i=0;i<piles.length;i++) {
-            // if(piles[i] < high) {
-            //     low = piles[i];
-            // }
             if(piles[i] > high) {
                 high = piles[i];
             }
@@ -16,7 +11,6 @@ class Solution {
         
         while(low <= high) {
             int mid = low + (high - low)/2;
-            System.out.println(mid + " ------ low " + low + " h " + high );
             int time = 0;
            for(int pile : piles) {
                time += pile/mid;
@@ -30,9 +24,6 @@ class Solution {
             } else {
                 low = mid+1;
             } 
-            
-            System.out.println(time + " --------- l ----- " + low + " h " + high);
-            
         }
         return low;
     }
