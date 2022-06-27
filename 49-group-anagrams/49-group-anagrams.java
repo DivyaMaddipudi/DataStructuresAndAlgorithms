@@ -18,11 +18,6 @@ class Solution {
             }       
         }
        
-         // Set<Map.Entry<String, ArrayList<String>>> values = hm.entrySet();
-         //  for(Map.Entry<String, ArrayList<String>> e:values){
-         //        System.out.println(e.getKey() + " : " + e.getValue());
-         //    }
-        
         for(ArrayList<String> values: hm.values()) {
             System.out.println(values);
             al.add(values);
