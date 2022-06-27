@@ -3,29 +3,20 @@ class Solution {
         
         int low = 0;
         int high = arr.length - 1;
-        
         while(low <= high) {
-            
             int mid = low + (high - low)/2;
-            
-           
-            
             if(arr[mid] - mid > k) {
                 if(mid - 1 < 0) {
                     high = 0;
                     break;
                 }
                 high = mid - 1;
-                System.out.println(" high = low " + high + " = " + low);
-                
             } else {
                 low = mid + 1;
             }
             
            
         }
-        
-        System.out.println(" high = low " + high + " = " + low);
         
         if(high == 0 && (arr[high] -high > k )) {
             int value = (arr[high] - high - 1);
@@ -36,7 +27,6 @@ class Solution {
              System.out.println(arr[high] + " " + value);
              return arr[high] + value;
         }
-       
     }
     
     private boolean search(int[] arr, int num) {
