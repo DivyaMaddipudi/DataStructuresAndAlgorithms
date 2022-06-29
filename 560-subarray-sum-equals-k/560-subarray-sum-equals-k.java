@@ -12,11 +12,14 @@ class Solution {
             if(hm.containsKey(diff)) {
                 count += hm.get(diff);
             } 
-             if(hm.containsKey(rsum)) {
-                 hm.put(rsum, hm.get(rsum) + 1);
-            } else {
-                hm.put(rsum, 1);
-            }
+            
+            
+            hm.put(rsum, hm.getOrDefault(rsum, 0) + 1);
+            //  if(hm.containsKey(rsum)) {
+            //      hm.put(rsum, hm.get(rsum) + 1);
+            // } else {
+            //     hm.put(rsum, 1);
+            // }
         }
         
         System.out.println(hm);
