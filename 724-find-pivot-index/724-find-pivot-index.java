@@ -3,11 +3,6 @@ class Solution {
         int leftSum = 0;
         int rightSum = 0;
         
-        int low = 0;
-      
-        int high = nums.length - 1;
-        
-        // int mid = low + (high - low)/2;
         for(int i=0;i<nums.length;i++) {
             leftSum = sum(nums, 0,i);
             rightSum = sum(nums, i+1, nums.length);
