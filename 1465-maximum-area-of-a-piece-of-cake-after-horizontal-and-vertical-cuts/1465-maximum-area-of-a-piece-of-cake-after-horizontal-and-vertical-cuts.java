@@ -26,9 +26,6 @@ class Solution {
                 diff = Math.max(diff, arr[i] - arr[i-1]);
             } 
             diff = Math.max(diff, Math.max(arr[0], n - max));
-            
-            System.out.println(diff + " === diff ");
-            
         } else {
             System.out.println(n + " " + arr[0]);
             
