@@ -12,8 +12,6 @@ class Solution {
             }
         }
         
-        int[] ans = new int[nums.length];
-        
         int[] positive = new int[pCount];
         int[] negative = new int[nCount];
         
@@ -27,23 +25,19 @@ class Solution {
             }
         }
         
-        System.out.println(Arrays.toString(positive));
-
-        System.out.println(Arrays.toString(negative));
-        
         int k=0;
         int j=0;
-        for(int i=0;i<ans.length;i++) {
+        for(int i=0;i<nums.length;i++) {
             if(i%2 == 0) {
-                ans[i] =  positive[k];
+                nums[i] =  positive[k];
                 k++;
             } else {
-                ans[i] =  negative[j];
+                nums[i] =  negative[j];
                 j++;
             }
         }
         
-        return ans;
+        return nums;
         
         
     }
