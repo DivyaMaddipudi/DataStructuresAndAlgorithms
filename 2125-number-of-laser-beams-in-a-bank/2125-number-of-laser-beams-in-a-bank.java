@@ -5,13 +5,11 @@ class Solution {
         int n = bank[0].length();
        
         int[][] matrix = new int[m][n];
-        
         for(int i=0;i<m;i++) {
             for(int j=0;j<n;j++) {
                 matrix[i][j] = Integer.valueOf(bank[i].charAt(j)-'0');
             }
         }
-        
         
         int count = 0;
         int prev = 0;
@@ -19,25 +17,16 @@ class Solution {
             int rowOne = 0;
             for(int j=0;j<n;j++) {
                 if(matrix[i][j] == 1) {
-                    // count++;
                     rowOne++;
                     
                 }
             }
-            
-            System.out.println(prev +  " ++++++++++++++ " + rowOne + " +++++++++++++++ " + count );
-            
             count = count + (prev * rowOne);
-            // prev = rowOne;
             if(rowOne != 0) {
                 prev=rowOne;
             }
             
-            System.out.println(prev + " ==== " + rowOne + " ===== " + count );
         }
-        
-            System.out.println(count);
-        
         return count;
         
     }
