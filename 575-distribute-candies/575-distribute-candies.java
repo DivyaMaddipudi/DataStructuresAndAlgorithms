@@ -1,6 +1,9 @@
 class Solution {
     public int distributeCandies(int[] candyType) {
         
+        
+        // TC: O(N)
+        // SC: O(N)
         int n = candyType.length;
         int canEat = n/2;
         
