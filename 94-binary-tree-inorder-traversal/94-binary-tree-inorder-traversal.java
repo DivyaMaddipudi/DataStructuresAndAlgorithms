@@ -21,7 +21,7 @@ class Solution {
         Stack<TreeNode> st = new Stack<>();
 
         TreeNode node = root;
-        while(root != null || !st.isEmpty()) {
+        while(true) {
             
            if(node != null) {
                st.push(node);
