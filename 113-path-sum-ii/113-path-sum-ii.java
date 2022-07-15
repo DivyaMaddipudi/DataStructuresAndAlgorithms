@@ -20,30 +20,25 @@ class Solution {
         result = new ArrayList<>();
         target = targetSum;
         helper(root, 0, new ArrayList<>());
-        
+        System.out.println(result);
         return result;
     }
     
     private void helper(TreeNode root, int currSum, List<Integer> path) {
         if(root == null) return;
-        
-        
         //logic
         currSum = currSum + root.val;
         path.add(root.val);
         
         if(root.left == null && root.right == null) {
-            System.out.println(currSum + " " + target);
-            
             if(currSum == target) {
-                System.out.println(path);
-                result.add(path);
-                return;
+                result.add(new ArrayList<>(path));
             }
         }
         
-        helper(root.left, currSum, new ArrayList<>(path));
-        helper(root.right, currSum, new ArrayList<>(path));
+        helper(root.left, currSum, path);
+        helper(root.right, currSum, path);
+        path.remove(path.size() - 1);
         
     }
 }
