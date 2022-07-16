@@ -17,17 +17,37 @@ class Solution {
     
     int max = Integer.MIN_VALUE;
     public int diameterOfBinaryTree(TreeNode root) {
-        if(root == null) return 0;
         
-        int lh = findH(root.left);
-        int rh = findH(root.right);
+       
+        calHeight(root);
         
-        max = Math.max(max, lh+rh);
         
-        diameterOfBinaryTree(root.left);
-        diameterOfBinaryTree(root.right);
+        //TC: O(N**2) - for each node, we are calculating the left height and right height. 
+        // Hence we are traversing all the nodes twice.
+        // SC: O(H) 
+        
+//         if(root == null) return 0;
+        
+//         int lh = findH(root.left);
+//         int rh = findH(root.right);
+        
+//         max = Math.max(max, lh+rh);
+        
+//         diameterOfBinaryTree(root.left);
+//         diameterOfBinaryTree(root.right);
         
         return max;
+    }
+    
+    private int calHeight(TreeNode root) {
+        if(root == null) return 0;
+      
+        //LOGIC 
+        int dl = calHeight(root.left);
+        int dr = calHeight(root.right);
+        
+        max = Math.max(max, dl+dr);
+        return 1+Math.max(dl, dr);
     }
     
     private int findH(TreeNode root) {
