@@ -30,6 +30,7 @@ class Solution {
         //logic 
         
         int lh = checkBT(root.left);
+        System.out.println(lh);
         if(lh == -1) {
             return -1;
         }
