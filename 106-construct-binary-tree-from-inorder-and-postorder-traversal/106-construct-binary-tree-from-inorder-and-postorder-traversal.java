@@ -26,8 +26,10 @@ class Solution {
         }
         
         //OPTIMIZED
-        return helper(inorder, 0, inorder.length-1, postorder, 0, postorder.length-1);
+        // TC: O(N)
+        // SC: O(N)
         
+        return helper(inorder, 0, inorder.length-1, postorder, 0, postorder.length-1);
         
         
         
