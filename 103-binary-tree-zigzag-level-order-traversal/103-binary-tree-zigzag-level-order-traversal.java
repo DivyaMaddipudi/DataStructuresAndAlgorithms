@@ -20,6 +20,9 @@ class Solution {
         
         if (root == null) return ans; 
         
+        
+        //TC: O(N**2)
+        //SC: O(N)
         queue.add(root);
         int flag = 0;
         while(!queue.isEmpty()) {
