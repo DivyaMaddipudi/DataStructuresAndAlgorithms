@@ -19,12 +19,12 @@ class Solution {
         
         if(root == null) return 0;
         
-//         int l = maxDepth(root.left);
-//         int r = maxDepth(root.right);
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
         
-//         return 1+Math.max(l, r);
-        helper(root, 0);
-        return max+1;
+        return 1+Math.max(l, r);
+        // helper(root, 0);
+        // return max+1;
     }
     
     private void helper(TreeNode root, int count) {
