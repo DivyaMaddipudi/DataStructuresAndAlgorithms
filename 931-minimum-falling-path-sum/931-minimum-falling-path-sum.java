@@ -1,6 +1,8 @@
 class Solution {
     public int minFallingPathSum(int[][] matrix) {
         
+        //TC: O(M**2)
+        //SC: O(1)
         int min = Integer.MAX_VALUE;
         
         int n = matrix.length;
