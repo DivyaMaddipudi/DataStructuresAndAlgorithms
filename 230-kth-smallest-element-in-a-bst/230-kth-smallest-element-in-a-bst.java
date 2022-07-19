@@ -34,8 +34,6 @@ class Solution {
 
         
         helper(root.left);
-        System.out.println(root.val + " in " + size);
-        
         size--;
         if(size == 0) {
             value = root.val;
@@ -43,12 +41,5 @@ class Solution {
         }
       
         helper(root.right);
-        // System.out.println(root.val + " post " + size);
-        
-        // if(size == 0) {
-        //     value = root.val;
-        //     return;
-        // }
-        
     }
 }
