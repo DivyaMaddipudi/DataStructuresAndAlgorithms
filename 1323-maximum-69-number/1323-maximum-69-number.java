@@ -18,18 +18,13 @@ class Solution {
                 numsArr[i] = 6;
                 
             }
-            System.out.println(Arrays.toString(numsArr) + " After");
-            
             int value = 0;
             for(int j=0;j<digitsCount;j++) {
                 value = (int)  (value * Math.pow(10, 1))+ numsArr[j];
             }
-            // System.out.println(value + " value ");
-            
             max = Math.max(max, value);
             numsArr[i] = temp;
         }
-        System.out.println(max);
         return max;
         
     }
