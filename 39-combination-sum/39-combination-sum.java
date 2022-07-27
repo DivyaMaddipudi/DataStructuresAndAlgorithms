@@ -12,17 +12,16 @@ class Solution {
     
     public void combinations(int index, int[] cands, int target,  List<List<Integer>>  ans, List<Integer> al, int size) {
         
-        if(index == size) {
-            if(target == val) {
-                 ans.add(new ArrayList<>(al));
-            }
+        if(index == size || target > val) {
             return;
         }
-        if(target < val) {
-            al.add(cands[index]);
-            combinations(index, cands, target+cands[index], ans, al, size);
-            al.remove(Integer.valueOf(cands[index]));
+        if(target == val) {
+            ans.add(new ArrayList<>(al));
+            return;
         }
+        al.add(cands[index]);
+        combinations(index, cands, target+cands[index], ans, al, size);
+        al.remove(Integer.valueOf(cands[index]));
         combinations(index+1, cands, target, ans, al, size);
     }
 }
