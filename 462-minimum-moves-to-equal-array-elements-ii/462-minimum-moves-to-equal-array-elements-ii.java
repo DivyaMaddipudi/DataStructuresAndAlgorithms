@@ -3,10 +3,10 @@ class Solution {
         long min = Long.MAX_VALUE;
         
         // OPTIMIZED
+        // O(N)
         int ptr = 0;
         int i = 0;
         long steps = 0;
-        
         while(ptr < nums.length) {
             long value = nums[ptr];
             // System.out.println(ptr + " " + i + " steps " + steps);
@@ -16,14 +16,12 @@ class Solution {
                 steps += nums[i] - value;
             }
             i++;
-            
             if(i == nums.length) {
                 min = Math.min(min, steps);
                 ptr++;
                 i=0;
                 steps = 0;
             }
-          
         }
         return (int)min;
         
