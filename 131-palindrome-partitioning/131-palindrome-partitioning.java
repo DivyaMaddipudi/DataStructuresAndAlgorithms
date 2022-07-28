@@ -18,17 +18,22 @@ class Solution {
                     return;
                 }
             }
-            result.add(path);
+            result.add(new ArrayList<>(path));
             return;
         }
         // logic 
         for(int i=index;i<s.length();i++) {
             String str = s.substring(index, i+1);
-            ArrayList<String> newlist = new ArrayList<>(path);
-            newlist.add(str);
-            // path.add(str);
+            
+            //RECURSION
+            // ArrayList<String> newlist = new ArrayList<>(path);
+            // newlist.add(str);
+            
+            path.add(str);
             // System.out.println(path);
-            helper(i+1, newlist, s);
+            helper(i+1, path, s);
+            
+            path.remove(path.size()-1);
         }
     }
     
