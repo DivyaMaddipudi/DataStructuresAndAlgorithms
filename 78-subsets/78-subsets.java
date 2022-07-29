@@ -13,7 +13,7 @@ class Solution {
     public void subSets(int index, ArrayList<Integer> arr, int size, int[] nums,  ArrayList<List<Integer>> al1) {
         if(index > size) {
             al1.add(new ArrayList<Integer>(arr));
-            System.out.println(al1);
+            // System.out.println(al1);
             return;
         }
         arr.add(nums[index]);
