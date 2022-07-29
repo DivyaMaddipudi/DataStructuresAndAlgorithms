@@ -33,12 +33,13 @@ class Solution {
         
         for(int i=0;i<n;i++) {
             if(isSafe(grid, row, i)) {
-                
+                // System.out.println(row + " pre " + i);
                 //action
                 grid[row][i] = true;
                 
                 //backtrack
                 backtrack(grid, row+1);
+                // System.out.println(row + " in " + i);
                 
                 //recurse
                 grid[row][i] = false;
