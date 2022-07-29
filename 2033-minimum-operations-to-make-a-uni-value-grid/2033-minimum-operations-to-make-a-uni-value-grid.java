@@ -40,12 +40,8 @@ class Solution {
             for(int i=0;i<arr.length;i++) {
                 count += Math.abs(arr[i] - medians.get(j))/x;
             }
-            System.out.println(count);
             min = Math.min(min, count);
         }
-        
-        
-        System.out.println(Arrays.toString(arr));
         return min;
     }
 }
