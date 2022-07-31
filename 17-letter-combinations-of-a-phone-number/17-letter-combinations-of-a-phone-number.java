@@ -22,6 +22,7 @@ class Solution {
             ans.add(currStr);
             return;
         }
+        System.out.println(index + " index ");
         String letters = map[digits.charAt(index)-'0'];
         for(int i=0;i<letters.length();i++) {
             backtrack(ans, digits, currStr+letters.charAt(i), index+1, map);
