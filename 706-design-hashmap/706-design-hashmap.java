@@ -1,61 +1,58 @@
 class MyHashMap {
     
-    class Node {
+    public class Node {
         int key;
         int value;
         Node next;
+        
         public Node(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
     
-   
+  
     
     Node[] nodes;
-    int bucket;
-    
+    int buckets;
     public MyHashMap() {
-        bucket = 1000;
-        nodes = new Node[bucket];
+        buckets = 1000;
+        nodes = new Node[buckets];
     }
     
-     public int getBucket(int key) {
-        return key%bucket;
+    public int getPriSize(int key) {
+        return key%buckets;
     }
     
     public Node find(Node head, int key) {
         Node prev = head;
         Node curr = head.next;
-        
-        while(curr != null && curr.key!=key) {
+        while(curr != null && curr.key != key) {
             prev = curr;
             curr = curr.next;
         }
         return prev;
     }
-    
     public void put(int key, int value) {
-        int index = getBucket(key);
-        if(nodes[index] == null) {
-            nodes[index] = new Node(-1, -1);
+        int firstIndex = getPriSize(key);
+        if(nodes[firstIndex] == null) {
+            nodes[firstIndex] = new Node(-1, -1);
         } 
-        
-        Node prev = find(nodes[index], key);
+        Node prev = find(nodes[firstIndex], key);
         if(prev.next == null) {
             prev.next = new Node(key, value);
         } else {
             prev.next.value = value;
         }
+       
     }
     
     public int get(int key) {
-        int index = getBucket(key);
-        if(nodes[index] == null) {
-            return -1;
+        int firstIndex = getPriSize(key);
+        if(nodes[firstIndex] == null) {
+           return -1;
         }
-        
-        Node prev = find(nodes[index], key);
+        Node prev = find(nodes[firstIndex], key);
         if(prev.next == null) {
             return -1;
         }
@@ -63,15 +60,16 @@ class MyHashMap {
     }
     
     public void remove(int key) {
-        int index = getBucket(key);
-        if(nodes[index] == null) {
+        int firstIndex = getPriSize(key);
+        if(nodes[firstIndex] == null) {
             return;
         }
+        Node prev = find(nodes[firstIndex], key);
         
-        Node prev = find(nodes[index], key);
         if(prev.next != null) {
             prev.next = prev.next.next;
         }
+        
     }
 }
 
