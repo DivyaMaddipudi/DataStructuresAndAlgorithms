@@ -1,63 +1,60 @@
 class MyHashSet {
     
-    boolean[][] container;
-    int bucket;
-    int bucketItems;
-
+    boolean[][] arr;
+    int buckets;
+    int bucketSize;
     public MyHashSet() {
-        bucket = 1000;
-        bucketItems = 1000;
-        container = new boolean[bucket][];
+        buckets = 1000;
+        bucketSize = 1000;
+        arr = new boolean[buckets][];
     }
     
-    public int getHash(int key) {
-        return key%bucket;
+    public int getBucket(int key) {
+        return key%buckets;
     }
     
-    
-    public int getSecondHash(int key) {
-        return key/bucketItems;
+    public int subBucketsInd(int key) {
+        return key/bucketSize;
     }
     
     public void add(int key) {
         
-        int index = getHash(key);
-        int sIndex = getSecondHash(key);
+        int firstInd = getBucket(key);
+        int secondInd = subBucketsInd(key);
         
-        if(container[index] == null) {
-        // System.out.println(index + " =============== ");
-            
-             if(index == 0) {
-                 container[index] = new boolean[bucketItems+1];
-             }  else {
-                 
-                 container[index] = new boolean[bucketItems];
-                 // System.out.println(index + " =============== " + container[index].length);
-                 
-             }
+        System.out.println(firstInd + " --- " + secondInd);
+        
+        
+        if(arr[firstInd] == null) {
+            if(firstInd == 0) {
+                arr[firstInd] = new boolean[bucketSize+1];
+            } else {
+                arr[firstInd] = new boolean[bucketSize];
+            }
         }
-        container[index][sIndex] = true;
+        arr[firstInd][secondInd] = true;    
     }
     
     public void remove(int key) {
-         int index = getHash(key);
-         int secondindex = getSecondHash(key);
-        if(container[index] == null) {
+        
+        int firstInd = getBucket(key);
+        int secondInd = subBucketsInd(key);
+        
+        if(arr[firstInd] == null) { 
             return;
         }
-         container[index][secondindex] = false;
+        
+        arr[firstInd][secondInd] = false;
     }
     
     public boolean contains(int key) {
-        int index = getHash(key);
-        int secondindex = getSecondHash(key);
-        if(container[index] != null) {
-            return container[index][secondindex];
-        } else {
+        int firstInd = getBucket(key);
+        int secondInd = subBucketsInd(key);
+        
+         if(arr[firstInd] == null) { 
             return false;
         }
-        // return true;
-        
+        return arr[firstInd][secondInd];
     }
 }
 
