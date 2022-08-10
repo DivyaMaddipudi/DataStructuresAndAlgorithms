@@ -1,25 +1,25 @@
 class MinStack {
     
     Stack<Integer> st1;
-    Stack<Integer> minStack;
     int min;
     public MinStack() {
         st1 = new Stack<>();
-        minStack = new Stack<>();
         min = Integer.MAX_VALUE;
-        minStack.push(min);
+        
     }
     
     public void push(int val) {
-        min = Math.min(min, val);
+        if(val <= min) {
+            st1.push(min);
+            min = val;
+        }
         st1.push(val);
-        minStack.push(min);
     }
     
     public void pop() {
-        st1.pop();
-        minStack.pop();
-        min = minStack.peek();
+      if(min == st1.pop()) {
+          min = st1.pop();
+      }
     }
     
     public int top() {
