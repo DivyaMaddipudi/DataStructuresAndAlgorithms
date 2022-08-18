@@ -4,10 +4,7 @@ class Solution {
         int m = matrix.length;
         int n = matrix[0].length;
         int max = 0;
-        
-        
         int[][] dp = new int[m+1][n+1];
-        System.out.println(dp.length + " DP " + dp[0].length);
         for(int i=0;i<m;i++) {
             for(int j=0;j<n;j++) {
                 if(matrix[i][j] == '1') {
