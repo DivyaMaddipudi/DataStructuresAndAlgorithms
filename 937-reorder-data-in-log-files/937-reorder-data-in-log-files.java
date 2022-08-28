@@ -3,9 +3,6 @@ class Solution {
         
             Arrays.sort(logs, (log1, log2) -> {
                 
-                
-                System.out.println(log1 + " --- " + log2);
-                
                 int index = log1.indexOf(" ");
                 String id1 = log1.substring(0, index);
                 String main = log1.substring(index + 1);
